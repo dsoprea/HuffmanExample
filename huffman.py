@@ -354,7 +354,7 @@ This is a test. Thank you for listening.
 
 def test_steps():
     clear_bytes = test_get_data()
-    _dump_hex("Raw:", clear_bytes)
+    _dump_hex("Original data:", clear_bytes)
 
     tu = TreeUtility()
 
