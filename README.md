@@ -1,6 +1,6 @@
 ## Description
 
-For the purpose of an example, I wrote a complete routine to encode and decode data using a Huffman code.
+For the purpose of an example, I wrote a complete routine to encode and decode data using a Huffman encoder.
 
 
 ## Features

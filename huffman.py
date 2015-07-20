@@ -1,11 +1,8 @@
 #!/usr/bin/env python3.4
 
 import queue
-import io
 import collections
-import struct
 import pprint
-import math
 
 import bitarray
 
