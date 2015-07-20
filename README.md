@@ -54,7 +54,7 @@ This example runs through all of the individual steps and looks like the followi
 
 ```python
 clear_bytes = test_get_data()
-_dump_hex("Raw:", clear_bytes)
+_dump_hex("Original data:", clear_bytes)
 
 tu = TreeUtility()
 
@@ -121,7 +121,7 @@ assert \
 Output:
 
 ```
-(Dump) Raw:
+(Dump) Original data:
 
 54 68 69 73 20 69 73 20 61 20 74 65 73 74 2e 20
 54 68 61 6e 6b 20 79 6f 75 20 66 6f 72 20 6c 69
@@ -317,3 +317,5 @@ Output:
 54 68 61 6e 6b 20 79 6f 75 20 66 6f 72 20 6c 69
 73 74 65 6e 69 6e 67 2e 0a
 ```
+
+**Note that the encoded data is bigger then the original data because our data is small and we combine the encoded-data with the tree. Small data is used for the benefit of this example but larger data will be used in practice.**
