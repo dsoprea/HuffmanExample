@@ -85,11 +85,7 @@ class TreeUtility(object):
         return b
 
     def __unserialize_inner(self, serialized, offset, tab=0):
-        tab_phrase = '. ' * tab
-
-#        print("HAS-VALUE: ({0}) OFF=({1})".format(serialized[offset], offset))
         has_value = bool(serialized[offset])
-
         offset += 1
 
         # This is nicer to look at than Python's ternary syntax.
@@ -98,17 +94,12 @@ class TreeUtility(object):
             value = serialized[offset]
             offset += 1
 
-#            print(tab_phrase + "VALUE=({0}) [{1}] OFF=({2})".format(hex(value)[2:], chr(value).strip(), offset))
-
             left_node = None
             right_node = None
         else:
             value = None
 
-#            print(tab_phrase + "LEFT OFF=({0})>".format(offset))
             (left_node, offset) = self.__unserialize_inner(serialized, offset, tab + 1)
-
-#            print(tab_phrase + "RIGHT OFF=({0})>".format(offset))
             (right_node, offset) = self.__unserialize_inner(serialized, offset, tab + 1)
 
         n = _NODE(value=value, left=left_node, right=right_node)
@@ -363,7 +354,6 @@ This is a test. Thank you for listening.
 
 def test_steps():
     clear_bytes = test_get_data()
-
     _dump_hex("Raw:", clear_bytes)
 
     tu = TreeUtility()
